@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.grouptwo.nidlist.Adapters.ListAdapter;
 import com.grouptwo.nidlist.R;
+import com.grouptwo.nidlist.ui.Output.DetailsScreen;
 
 import java.util.ArrayList;
 
@@ -18,7 +21,8 @@ public class ListScreen extends AppCompatActivity {
     ArrayList<String> listData;
     RecyclerView listRec;
     ListAdapter listAdapter;
-    TextView nid_txt;
+    //TextView nidNum_txt;
+    //Intent goToDetailScreen;
 
 
     @Override
@@ -28,6 +32,7 @@ public class ListScreen extends AppCompatActivity {
 
         initView();
 
+        //goToDetailScreen = new Intent(ListScreen.this, DetailsScreen.class);
 
         //insert the data into ArrayList
         listData = new ArrayList<>();
@@ -37,13 +42,26 @@ public class ListScreen extends AppCompatActivity {
         listData.add("1005834687");
         listData.add("1040398346");
 
-        listAdapter = new ListAdapter(listData, ListScreen.this);
-        listRec.setLayoutManager(new LinearLayoutManager(this));
+        //manage the adapter and put it into recycler view
+        listAdapter = new ListAdapter(listData, this);
         listRec.setAdapter(listAdapter);
+        listRec.setLayoutManager(new LinearLayoutManager(this));
+
+
+
+        /*nidNum_txt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String nid;
+                nid = nidNum_txt.getText().toString();
+
+                goToDetailScreen.putExtra("nid", nid);
+                startActivity(goToDetailScreen);
+            }
+        });*/
     }
 
     public void initView(){
         listRec = findViewById(R.id.listRec);
-        nid_txt = findViewById(R.id.txt_idnum);
     }
 }
