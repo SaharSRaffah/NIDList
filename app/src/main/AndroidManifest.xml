@@ -10,17 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NIDList">
         <activity
+            android:name=".ui.Splash.SplashScreen"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+
+        <activity
             android:name=".ui.Output.DetailsScreen"
             android:exported="true" />
         <activity
             android:name=".ui.List.ListScreen"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"/>
     </application>
 
 </manifest>

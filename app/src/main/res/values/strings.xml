@@ -2,4 +2,10 @@
     <string name="app_name">NIDList</string>
 
     <string name="nid">NID</string>
+    <string name="btn">Back</string>
+    <string name="welcome">Welcome</string>
+
+    <string name="name">Name:</string>
+    <string name="email">Email:</string>
+    <string name="gander">Gander:</string>
 </resources>
